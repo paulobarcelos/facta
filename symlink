@@ -1,0 +1,28 @@
+#!/bin/bash
+# Setup symlinks wp-content
+
+SRC_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd $SRC_DIR
+SRC_DIR=$(pwd)/
+cd ../facta.art.br/
+DST_DIR=$(pwd)/
+echo $DST_DIR
+
+
+echo ""
+echo "-----------------------------"
+echo "Backing up wp-content ..."
+cd $DST_DIR
+mv wp-content wp-content_old
+echo $DST_DIR"wp-content/"
+echo "moved to -> "$SRC_DIR"wp-content_old/"
+
+echo ""
+echo "-----------------------------"
+echo "Creating wp-content symlink..."
+ln -s ${SRC_DIR}wp-content/ ${DST_DIR}wp-content 
+echo $DST_DIR"wp-content/"
+echo "links to -> "$SRC_DIR"wp-content/"
+
+
+exit 1
