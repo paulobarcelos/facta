@@ -20,7 +20,6 @@ get_header(); ?>
 							
 							<div class="page-header"><h1 class="single-title" itemprop="headline"><a href="<?php echo get_permalink($post->post_parent); ?>" rev="attachment"><?php echo get_the_title($post->post_parent); ?></a> &raquo; <?php the_title(); ?></h1></div>
 							
-							<p class="meta"><?php _e("Posted", "bonestheme"); ?> <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_date(); ?></time> <?php _e("by", "bonestheme"); ?> <?php the_author_posts_link(); ?>.</p>
 						
 						</header> <!-- end article header -->
 					
@@ -56,7 +55,6 @@ get_header(); ?>
 					
 					</article> <!-- end article -->
 					
-					<?php comments_template(); ?>
 					
 					<?php endwhile; ?>			
 					
@@ -92,6 +90,8 @@ get_header(); ?>
 					      $imgmeta = wp_get_attachment_metadata( $id );
 					
 					// Convert the shutter speed retrieve from database to fraction
+					      if($imgmeta['image_meta']['shutter_speed']){
+					     
 					      if ((1 / $imgmeta['image_meta']['shutter_speed']) > 1)
 					      {
 					         if ((number_format((1 / $imgmeta['image_meta']['shutter_speed']), 1)) == 1.3
@@ -107,6 +107,7 @@ get_header(); ?>
 					      else{
 					         $pshutter = $imgmeta['image_meta']['shutter_speed'] . " seconds";
 					       }
+					      }
 					
 					// Start to display EXIF and IPTC data of digital photograph
 					       if ( $imgmeta['image_meta']['created_timestamp'] ) { 

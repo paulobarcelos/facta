@@ -99,5 +99,8 @@ $(document).ready(function() {
 	$('.alert-message').alert();
 	
 	$('.dropdown-toggle').dropdown();
+
+	// Gallery
+	$(".carousel-inner a").photoSwipe({});
  
 }); /* end of as page load scripts */

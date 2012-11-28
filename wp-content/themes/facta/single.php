@@ -1,4 +1,8 @@
+<?php
+	$custom = get_post_custom();
+?>
 <?php get_header(); ?>
+
 			
 			<div id="content" class="clearfix row-fluid">
 			
@@ -10,7 +14,16 @@
 						
 						<header>
 							
-							<div class="page-header"><h1><?php the_title(); ?></h1></div>
+							<div class="page-header">
+								<h1><?php the_title(); ?></h1>
+								<?php if ( !empty( $post->post_excerpt ) ) :?>
+									<p class="excerpt"><?php echo $post->post_excerpt; ?></p>
+								<?php endif; ?>
+								<?php if(isset($custom['author'])):?>
+									<span class="author"><?php echo $custom['author'][0]; ?></span>
+								<?php endif; ?>
+								
+							</div>
 						
 						</header> <!-- end article header -->
 					
@@ -27,7 +40,7 @@
 					
 					</article> <!-- end article -->
 					
-					<?php comments_template(); ?>
+					<?php //comments_template(); ?>
 					
 					<?php endwhile; ?>	
 					

@@ -150,7 +150,7 @@ p.tags{
 }
 
 div[id*='attachment_']{
-	max-width: 100%;
+	min-width: 100%;
 	height: 100%;
 }
 
@@ -165,7 +165,7 @@ div[id*='attachment_']{
 
 #main article img{
 	height: auto;
-	max-width: 100%;
+	min-width: 100%;
 }
 
 img.alignleft{
@@ -367,7 +367,7 @@ ol.commentlist #respond{
 /* image attachment */
 
 .attachment #main .post_content img{
-	max-width: 100%;
+	min-width: 100%;
 }
 
 .ie8 #main .media-grid img{
@@ -600,7 +600,7 @@ blockquote.pull-left{
 /* FACTA */
 /* basic fonts */
 .facta p {
-	font-family: 'Georgia serif';
+	font-family: Georgia, Serif;
 }
 /* magazine covers*/
 .facta .cover h1,
@@ -628,13 +628,83 @@ blockquote.pull-left{
 	font-weight: normal;
 	text-transform: uppercase;
 }
+/* magazine-article */
+.magazine-article:nth-child(3n+4){
+	margin-left: 0;
+}
+.magazine-article .thumbnail:hover{
+	border-color: #000;
+	background-color: #FCFCC1;
+}
+.magazine-article  .wrapper{
+	padding: 0.4em;
+}
+.magazine-article  a{
+	color: inherit;
+}
+.magazine-article  a:hover {
+	text-decoration: none;
+}
+
+/* page header */
 .facta .page-header {
 	border-bottom: none;
 }
 .facta .page-header h1 {
+	font-size: 4.5em;
 	padding-top: 0.1em;
-	text-align: center;	
-	/*box-shadow: 0px 1px 0px black, 0px 2px 0px white, 0px 3px 0px black, 0px -1px 0px black, 0px -2px 0px white, 0px -3px 0px black;*/
+	text-align: center;
 	border-top: double;
 	border-bottom: double;
+	line-height: 1em;
+}
+@media only screen and (max-width: 500px) {
+	.facta .page-header h1{
+		font-size: 3.5em;
+		padding-top: 0.1em;
+		line-height: 1em;
+	}
+}
+.facta .page-header .excerpt {
+	padding: 1.5em 2em 1em 2em;
+	text-align: center;
+	font-size: 2em;
+	font-style: italic;
+	line-height: 1.2em;
+}
+.facta .page-header .author {
+	padding-bottom: 0.7em;
+	text-align: center;
+	font-size: 1.2em;
+	font-style: normal;
+	font-family: Georgia, serif;
+	width: 200px;
+	margin: 0 auto;
+	display: block;
+	border-bottom: dashed 1px;
+}
+
+/* carrousel */
+.carousel-inner {
+	height: 500px;
+}
+.carousel-inner .carousel-caption{
+	top:425px;
+	height: 75px;
+	position: absolute;
+}
+.carousel-inner .carousel-caption p{
+	display: block;
+	font-size: 0.9em;
+	font-family: Courier;
+}
+.carousel-inner .carousel-caption h4{
+	font-family: Georgia, Serif;
+	font-size: 0.9em;
+}
+@media (max-width: 425px) {
+	.carousel-inner .carousel-caption{
+		top:0px;
+		position: absolute;
+	}
 }
