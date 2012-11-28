@@ -114,7 +114,7 @@ Template Name: Homepage
 					
 					<?php 
 						// No comments on homepage
-						//comments_template();
+						////comments_template();
 					?>
 					
 					<?php endwhile; ?>	

@@ -7,9 +7,14 @@
 					<div class="page-header">
 					<?php if (is_category()) { ?>
 						<h1 class="archive_title h2">
-							<span></span> <?php single_cat_title(); ?>
+							<?php single_cat_title(); ?>
 						</h1>
-					<?php } elseif (is_tag()) { ?> 
+						<?php 
+						$description = category_description();
+							if ( !empty( $description ) ) :?>
+									<div class="excerpt"><?php echo $description; ?></div>
+								<?php endif; ?>
+						<?php } elseif (is_tag()) { ?> 
 						<h1 class="archive_title h2">
 							<span><?php _e("Posts Tagged:", "bonestheme"); ?></span> <?php single_tag_title(); ?>
 						</h1>
@@ -32,48 +37,50 @@
 					<?php } ?>
 					</div>
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix span3 cover'); ?> role="article">
-						<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-							<h4 class="h2"><?php the_title(); ?></h4>
-							<?php the_post_thumbnail( 'big' ); ?>
-							<?php the_excerpt(); ?>
-							
-						</a>
-					</article> <!-- end article -->
-					
-					<?php endwhile; ?>	
-					
-					<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
+					<div class="thumbnails">
+						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
-						<?php page_navi(); // use the page navi function ?>
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix span4 magazine-article'); ?> role="article">
+									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="thumbnail">
+										<div class="wrapper">
+											<h4 class="title"><?php the_title(); ?></h4>
+											<p class="excerpt"><?php the_excerpt_max_charlength(200); ?></p>										
+											<?php the_post_thumbnail( 'magazine-article', array('class' => 'img-rounded image')); ?>
+										</div>
+									</a>
+								</article> <!-- end article -->
+						
+						<?php $post_index++; endwhile; ?>	
+						
+						<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
+							
+							<?php page_navi(); // use the page navi function ?>
 
-					<?php } else { // if it is disabled, display regular wp prev & next links ?>
-						<nav class="wp-prev-next">
-							<ul class="clearfix">
-								<li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
-								<li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
-							</ul>
-						</nav>
-					<?php } ?>
-								
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
-			
+						<?php } else { // if it is disabled, display regular wp prev & next links ?>
+							<nav class="wp-prev-next">
+								<ul class="clearfix">
+									<li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
+									<li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
+								</ul>
+							</nav>
+						<?php } ?>
+									
+						
+						<?php else : ?>
+						
+						<article id="post-not-found">
+						    <header>
+						    	<h1><?php _e("No Posts Yet", "bonestheme"); ?></h1>
+						    </header>
+						    <section class="post_content">
+						    	<p><?php _e("Sorry, What you were looking for is not here.", "bonestheme"); ?></p>
+						    </section>
+						    <footer>
+						    </footer>
+						</article>
+						
+						<?php endif; ?>
+					</div>
 				</div> <!-- end #main -->
     
 			</div> <!-- end #content -->

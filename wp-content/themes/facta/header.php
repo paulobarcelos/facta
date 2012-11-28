@@ -44,6 +44,9 @@
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/bootstrap.less">
   		<link rel="stylesheet/less" type="text/css" href="<?php echo get_template_directory_uri(); ?>/less/responsive.less">
 
+  		<!-- photoswipe gallery stuff -->
+  		<link href="<?php echo get_template_directory_uri(); ?>/library/photoswipe/photoswipe.css" type="text/css" rel="stylesheet" />	
+  		
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
