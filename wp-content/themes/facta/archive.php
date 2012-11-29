@@ -45,7 +45,7 @@
 										<div class="wrapper">
 											<h4 class="title"><?php the_title(); ?></h4>
 											<p class="excerpt"><?php the_excerpt_max_charlength(200); ?></p>										
-											<?php the_post_thumbnail( 'magazine-article', array('class' => 'img-rounded image')); ?>
+											<?php the_post_thumbnail( 'big'); ?>
 										</div>
 									</a>
 								</article> <!-- end article -->

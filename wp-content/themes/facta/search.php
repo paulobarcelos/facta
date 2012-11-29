@@ -2,7 +2,7 @@
 			
 			<div id="content" class="clearfix row-fluid">
 			
-				<div id="main" class="span8 clearfix" role="main">
+				<div id="main" class="span12 clearfix" role="main">
 				
 					<div class="page-header"><h1><span><?php _e("Search Results for","bonestheme"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1></div>
 
@@ -64,7 +64,6 @@
 			
 				</div> <!-- end #main -->
     			
-    			<?php get_sidebar(); // sidebar 1 ?>
     
 			</div> <!-- end #content -->
 

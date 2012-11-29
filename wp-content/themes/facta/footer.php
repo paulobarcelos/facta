@@ -15,10 +15,16 @@
 						<?php bones_footer_links(); // Adjust using Menus in Wordpress Admin ?>
 					</nav>
 					
-					<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-			
-					<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-				
+					<div class="footer-logos">
+						<img src="<?php echo get_template_directory_uri(); ?>/images/footer-logos.png" alt="">
+					</div>
+					<div class="creative-commons">
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/deed.en_US">
+							<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" />
+						</a>Este trabalho está licenciado em conformidade com a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/deed.en_US">Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil</a>.
+					</div>
+
+
 				</div> <!-- end #inner-footer -->
 				
 			</footer> <!-- end footer -->

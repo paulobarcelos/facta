@@ -11,6 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 */
 
 @import url(http://fonts.googleapis.com/css?family=Ultra);
+@import url(http://fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic);
 
 /* micro clearfix: http://nicolasgallagher.com/micro-clearfix-hack/ */
 /* For modern browsers */
@@ -598,9 +599,45 @@ blockquote.pull-left{
 
 
 /* FACTA */
+
+/* header */
+.facta .navbar .brand {
+	width: 70px;
+	height: 38px;
+	background: url("images/header-logo.png") no-repeat;
+	font-size: 0px;
+	padding: 0;
+	margin: 2px;
+	color: white;
+}
+.facta .navbar .navbar-search .search-query{
+	font-family: Gentium Basic, Georgia, Serif;
+	font-size: 1em;
+}
+.facta .navbar {
+	font-family: Ultra, sans-serif;
+	font-size: 1em;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
 /* basic fonts */
 .facta p {
-	font-family: Georgia, Serif;
+	font-family: Gentium Basic, Georgia, Serif;
+}
+.facta a {
+	color: rgb(237,26,59);
+}
+@media all{
+	body.facta {
+		font-size: 17px; 
+		line-height: 1.6em;
+	}
+}
+
+
+#main .thumbnails article{
+	float: left;
 }
 /* magazine covers*/
 .facta .cover h1,
@@ -624,7 +661,7 @@ blockquote.pull-left{
 .facta h2,
 .facta h3,
 .facta h4{
-	font-family: 'Ultra', serif;
+	font-family: 'Ultra', sans-serif;
 	font-weight: normal;
 	text-transform: uppercase;
 }
@@ -634,7 +671,7 @@ blockquote.pull-left{
 }
 .magazine-article .thumbnail:hover{
 	border-color: #000;
-	background-color: #FCFCC1;
+	background-color: rgb(251, 201, 187);
 }
 .magazine-article  .wrapper{
 	padding: 0.4em;
@@ -646,42 +683,80 @@ blockquote.pull-left{
 	text-decoration: none;
 }
 
+/* 404 */
+.error404 h1{
+	font-size: 10em;
+	text-align: center;
+	width: 100%;
+	margin: 0.5em 0;
+}
+@media only screen and (max-width: 500px) {
+	.error404 h1{
+		font-size: 8em;
+	}
+}
+
 /* page header */
 .facta .page-header {
 	border-bottom: none;
 }
 .facta .page-header h1 {
-	font-size: 4.5em;
+	font-size: 4em;
 	padding-top: 0.1em;
 	text-align: center;
 	border-top: double;
 	border-bottom: double;
 	line-height: 1em;
 }
-@media only screen and (max-width: 500px) {
-	.facta .page-header h1{
-		font-size: 3.5em;
-		padding-top: 0.1em;
-		line-height: 1em;
-	}
-}
 .facta .page-header .excerpt {
 	padding: 1.5em 2em 1em 2em;
 	text-align: center;
-	font-size: 2em;
+	font-size: 1.7em;
 	font-style: italic;
 	line-height: 1.2em;
 }
 .facta .page-header .author {
 	padding-bottom: 0.7em;
 	text-align: center;
-	font-size: 1.2em;
+	font-size: 0.9em;
 	font-style: normal;
-	font-family: Georgia, serif;
+	font-family: Gentium Basic, Georgia, serif;
 	width: 200px;
 	margin: 0 auto;
 	display: block;
 	border-bottom: dashed 1px;
+}
+@media only screen and (max-width: 500px) {
+	.facta .page-header h1{
+		font-size: 2.5em;
+		padding-top: 0.1em;
+		line-height: 1em;
+	}
+	.facta .page-header .excerpt {
+	padding: 1em;
+	text-align: center;
+	font-size: 1.4em;
+	font-style: italic;
+	line-height: 1.6em;
+}
+}
+/* footer */
+.facta #inner-footer hr {
+	border-top: dashed 1px #ED1A3B;
+}
+.footer-logos{
+	text-align: center;
+}
+
+
+.creative-commons {
+	font-family: Gentium Basic, Georgia, Serif;
+	margin: 2em;
+	text-align: center;
+	font-size: 0.8em;
+}
+.creative-commons img {
+	margin-right: 1em;
 }
 
 /* carrousel */
