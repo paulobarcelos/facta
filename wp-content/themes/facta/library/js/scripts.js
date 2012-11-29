@@ -103,5 +103,6 @@ $(document).ready(function() {
 	// Gallery
 	var carousel = $(".carousel-inner a");
 	if(carousel.length)carousel.photoSwipe({});
+
  
 }); /* end of as page load scripts */

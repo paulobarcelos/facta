@@ -37,10 +37,10 @@
 					<?php } ?>
 					</div>
 
-					<div class="thumbnails">
+					<div class="thumbnails pintrest">
 						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
-								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix span4 magazine-article'); ?> role="article">
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">
 									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="thumbnail">
 										<div class="wrapper">
 											<h4 class="title"><?php the_title(); ?></h4>
