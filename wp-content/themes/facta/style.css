@@ -809,6 +809,10 @@ blockquote.pull-left{
 	line-height: 1.2em;
 }
 
+.pager .inactive {
+	opacity: 0.3;
+}
+
 /* pintrest style layout*/
 
 .pintrest {

@@ -44,6 +44,12 @@
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">
 									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="thumbnail">
 										<div class="wrapper">
+											<?php
+												$custom = get_post_custom();
+											?>
+											<?php if(isset($custom['selo'])): foreach ($custom['selo'] as $selo): ?>
+												<img class="selo" alt="" src="<?php echo $selo; ?>"/>
+											<?php endforeach; endif;?>
 											<h4 class="title"><?php the_title(); ?></h4>
 											<p class="excerpt"><?php the_excerpt_max_charlength(200); ?></p>										
 											<?php the_post_thumbnail( 'big'); ?>
