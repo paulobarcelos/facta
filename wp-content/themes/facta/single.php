@@ -59,9 +59,6 @@
 					
 						<section class="post_content">
 							<?php the_content(); ?>
-
-
-
 					
 						</section> <!-- end article section -->
 
