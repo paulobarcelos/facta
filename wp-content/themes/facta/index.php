@@ -1,3 +1,9 @@
+<?php
+	$categories = get_categories(array(
+		'parent' => 0
+	));
+	wp_redirect( get_category_link($categories[0]->cat_ID), 302 );
+?>
 <?php get_header(); ?>
 			
 			<?php
@@ -18,9 +24,6 @@
 				<div id="main" class="span12 clearfix" role="main">
 
 					<?php 
-						$categories = get_categories(array(
-							'parent' => 0
-						));
 						foreach ($categories as $category) :
 							$posts = get_posts(array(
 								'numberposts' => 1,

@@ -101,6 +101,8 @@ $(document).ready(function() {
 	$('.dropdown-toggle').dropdown();
 
 	// Gallery
-	$(".carousel-inner a").photoSwipe({});
+	var carousel = $(".carousel-inner a");
+	if(carousel.length)carousel.photoSwipe({});
+
  
 }); /* end of as page load scripts */

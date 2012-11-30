@@ -37,15 +37,22 @@
 					<?php } ?>
 					</div>
 
-					<div class="thumbnails">
+					<div class="thumbnails pintrest">
+						<?php query_posts('order=ASC'); ?>
 						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
-								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix span4 magazine-article'); ?> role="article">
+								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">
 									<a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" class="thumbnail">
 										<div class="wrapper">
+											<?php
+												$custom = get_post_custom();
+											?>
+											<?php if(isset($custom['selo'])): foreach ($custom['selo'] as $selo): ?>
+												<img class="selo" alt="" src="<?php echo $selo; ?>"/>
+											<?php endforeach; endif;?>
 											<h4 class="title"><?php the_title(); ?></h4>
 											<p class="excerpt"><?php the_excerpt_max_charlength(200); ?></p>										
-											<?php the_post_thumbnail( 'magazine-article', array('class' => 'img-rounded image')); ?>
+											<?php the_post_thumbnail( 'big'); ?>
 										</div>
 									</a>
 								</article> <!-- end article -->

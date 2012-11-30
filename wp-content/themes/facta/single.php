@@ -9,8 +9,38 @@
 				<div id="main" class="span12 clearfix" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+					<?php 
+						$category = get_the_category($post->ID);
+						$category = $category[0];
+
+						$previous_post = get_adjacent_post( TRUE, '', TRUE );
+						$next_post = get_next_post( TRUE, '', FALSE );
+					?>
 					
 					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
+						<ul class="pager">
+								<?php if(empty($previous_post)):?>
+									<li class="pull-left inactive">
+										<span>&larr;</span>
+									</li>
+								<?php else:?>
+									<li class="pull-left">
+										<a href="<?php echo get_permalink( $previous_post->ID );?>">&larr;</a>
+									</li>
+								<?php endif;?>
+								
+								<?php if(empty($next_post)):?>
+									<li class="pull-right inactive">
+										<span>&rarr;</span>
+									</li>
+								<?php else:?>
+									<li class="pull-right">
+										<a href="<?php echo get_permalink( $next_post->ID );?>">&rarr;</a>
+									</li>
+								<?php endif;?>
+								
+							</ul>
 						
 						<header>
 							
@@ -31,12 +61,37 @@
 							<?php the_content(); ?>
 					
 						</section> <!-- end article section -->
-						
-						<footer>
-			
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","bonestheme") . ': ', ', ', '</span>'); ?></p>
+
+						<ul class="breadcrumb">
+								<li><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a> <span class="divider">&#8594;</span></li>
+								<li><a href="<?php echo esc_url( get_category_link( $category->term_id ) ); ?>"><?php echo $category->name;?></a> <span class="divider">&#8594;</span></li>
+								<li class="active"><?php the_title(); ?></li>
+							</ul>
 							
-						</footer> <!-- end article footer -->
+							<ul class="pager">
+								<?php if(empty($previous_post)):?>
+									<li class="pull-left inactive">
+										<span>&larr;</span>
+									</li>
+								<?php else:?>
+									<li class="pull-left">
+										<a href="<?php echo get_permalink( $previous_post->ID );?>">&larr;</a>
+									</li>
+								<?php endif;?>
+								
+								<?php if(empty($next_post)):?>
+									<li class="pull-right inactive">
+										<span>&rarr;</span>
+									</li>
+								<?php else:?>
+									<li class="pull-right">
+										<a href="<?php echo get_permalink( $next_post->ID );?>">&rarr;</a>
+									</li>
+								<?php endif;?>
+								
+							</ul>
+						
+						
 					
 					</article> <!-- end article -->
 					

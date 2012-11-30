@@ -104,7 +104,7 @@
 		
 			<div id="inner-header" class="clearfix">
 				
-				<div class="navbar navbar-fixed-top">
+				<div class="navbar navbar-fixed-top navbar-inverse">
 					<div class="navbar-inner">
 						<div class="container-fluid nav-container">
 							<nav role="navigation">
