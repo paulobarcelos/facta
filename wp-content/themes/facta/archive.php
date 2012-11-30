@@ -38,6 +38,7 @@
 					</div>
 
 					<div class="thumbnails pintrest">
+						<?php query_posts('order=ASC'); ?>
 						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">

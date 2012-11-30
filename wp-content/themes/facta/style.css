@@ -665,6 +665,10 @@ blockquote.pull-left{
 	font-weight: normal;
 	text-transform: uppercase;
 }
+
+.post_content{
+	margin-bottom: 3em;
+}
 /* magazine-article */
 .magazine-article:nth-child(3n+4){
 	margin-left: 0;
@@ -743,6 +747,7 @@ blockquote.pull-left{
 /* footer */
 .facta #inner-footer hr {
 	border-top: dashed 1px #ED1A3B;
+	border-bottom: none;
 }
 .footer-logos{
 	text-align: center;
@@ -785,6 +790,23 @@ blockquote.pull-left{
 		top:0px;
 		position: absolute;
 	}
+}
+
+/* breadcrum & navigation */
+.breadcrumb {
+	font-family: Gentium Basic, Georgia, Serif;
+	font-style: italic;
+}
+
+/* pager */
+.pager {
+	font-size: 1.7em;
+	margin-top: 0;
+}
+.pager span,
+.pager a{
+	padding: 0 0.5em 0.1em 0.5em;
+	line-height: 1.2em;
 }
 
 /* pintrest style layout*/
