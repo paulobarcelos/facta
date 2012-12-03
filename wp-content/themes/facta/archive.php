@@ -38,7 +38,7 @@
 					</div>
 
 					<div class="thumbnails pintrest">
-						<?php query_posts('order=ASC'); ?>
+						<?php query_posts('order=ASC&posts_per_page=-1'); ?>
 						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">
@@ -58,19 +58,7 @@
 								</article> <!-- end article -->
 						
 						<?php $post_index++; endwhile; ?>	
-						
-						<?php if (function_exists('page_navi')) { // if expirimental feature is active ?>
-							
-							<?php page_navi(); // use the page navi function ?>
-
-						<?php } else { // if it is disabled, display regular wp prev & next links ?>
-							<nav class="wp-prev-next">
-								<ul class="clearfix">
-									<li class="prev-link"><?php next_posts_link(_e('&laquo; Older Entries', "bonestheme")) ?></li>
-									<li class="next-link"><?php previous_posts_link(_e('Newer Entries &raquo;', "bonestheme")) ?></li>
-								</ul>
-							</nav>
-						<?php } ?>
+					
 									
 						
 						<?php else : ?>
