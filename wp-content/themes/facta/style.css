@@ -846,3 +846,32 @@ blockquote.pull-left{
 	}
 }
 
+/* language selector */
+@media only screen and (min-width: 980px) {
+	#lang_sel_list {
+		float: right;
+	}
+	#lang_sel_list a {
+		text-align: right;	
+	}
+}
+.nav-collapse .nav {
+	margin-bottom: 0 !important;
+}
+#lang_sel_list a {
+	background-color: transparent !important;
+	border: none !important;
+	font-family: Ultra, sans-serif;
+	font-size: 1em;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 10px 15px !important;
+}
+#lang_sel_list ul {
+	border: none;
+}
+#lang_sel_list ul li .lang_sel_sel {
+	display: none;
+}
+
