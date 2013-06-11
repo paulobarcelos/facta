@@ -21,7 +21,7 @@
 					<div class="creative-commons">
 						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/deed.en_US">
 							<img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/br/80x15.png" />
-						</a>Este trabalho está licenciado em conformidade com a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/deed.en_US">Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil</a>.
+						</a><?php _e('Este trabalho está licenciado em conformidade com a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/br/deed.en_US">Creative Commons Atribuição-NãoComercial-CompartilhaIgual 3.0 Brasil');?></a>.
 					</div>
 
 

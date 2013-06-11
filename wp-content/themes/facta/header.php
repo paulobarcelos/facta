@@ -123,6 +123,7 @@
 										<input name="s" id="s" type="text" class="search-query" autocomplete="off" placeholder="<?php _e('Search','bonestheme'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
 									</form>
 									<?php } ?>
+									<?php do_action('icl_language_selector'); ?>
 								</div>
 								
 							</nav>
