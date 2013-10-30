@@ -21,6 +21,8 @@ require_once('library/shortcodes.php');
 // Admin Functions (commented out by default)
 // require_once('library/admin.php');         // custom admin functions
 
+require_once('admin-screen-general.php');
+
 // Custom Backend Footer
 add_filter('admin_footer_text', 'bones_custom_admin_footer');
 function bones_custom_admin_footer() {

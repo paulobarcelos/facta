@@ -38,7 +38,16 @@
 					</div>
 
 					<div class="thumbnails pintrest">
-						<?php query_posts('order=ASC&posts_per_page=-1'); ?>
+					
+						<?php if (is_category()) :?>
+							<?php 
+								global $wp_query;
+								$cat_query = $wp_query->query;
+								$cat_query['posts_per_page'] = -1;
+								$cat_query['order'] = 'ASC';
+							?>
+							<?php query_posts( $cat_query); ?>
+						<?php endif;?>
 						<?php if (have_posts()) : $post_index = 0; while (have_posts()) : the_post(); ?>
 						
 								<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix pin magazine-article'); ?> role="article">
