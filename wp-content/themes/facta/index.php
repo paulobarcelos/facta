@@ -1,8 +1,19 @@
 <?php
 	$categories = get_categories(array(
-		'parent' => 0
+		'parent' => 0,
+		'order' => 'DESC',
+		'orderby' => 'id'
 	));
-	wp_redirect( get_category_link($categories[0]->cat_ID), 302 );
+
+
+	$redirect = get_option('facta_home_redirect');
+	if($redirect){
+		if((get_option('facta_redirect_only_once') && !@$_SESSION['home_redirect']) || !get_option('facta_redirect_only_once')){
+			$_SESSION['home_redirect'] = true;
+			wp_redirect( $redirect );
+			exit();
+		}	
+	}
 ?>
 <?php get_header(); ?>
 			
@@ -27,17 +38,18 @@
 						foreach ($categories as $category) :
 							$posts = get_posts(array(
 								'numberposts' => 1,
-								'category' => $category->cat_ID
+								'category_name' => $category->slug,
+								'order' => 'ASC'
 							));
 							$first_post = $posts[0];
-							$image = wp_get_attachment_image_src( get_post_thumbnail_id( $first_post->ID ), 'big' ); 
 							
 					?>
 						<article id="category-<?php echo $category->cat_ID; ?>" class="span6 cover" role="article">
 						
 							<a href="<?php echo get_category_link($category->cat_ID) ?>" title="<?php echo $category->name; ?>" rel="bookmark">
 								<h3><?php echo $category->name; ?></h3>
-								<img src=<?php echo $image[0];?> />
+							
+								<?php echo get_the_post_thumbnail( $first_post->ID , 'big' ); ?> 
 							</a>
 						
 						</article> <!-- end article -->
