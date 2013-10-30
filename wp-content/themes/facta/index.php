@@ -5,10 +5,14 @@
 		'orderby' => 'id'
 	));
 
+
 	$redirect = get_option('facta_home_redirect');
 	if($redirect){
-		wp_redirect( $redirect );
-		exit();
+		if((get_option('facta_redirect_only_once') && !@$_SESSION['home_redirect']) || !get_option('facta_redirect_only_once')){
+			$_SESSION['home_redirect'] = true;
+			wp_redirect( $redirect );
+			exit();
+		}	
 	}
 ?>
 <?php get_header(); ?>
