@@ -44,7 +44,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 }
 
 .gallery-caption{
-	
+	display: none;
+}
+.gallery-icon a.thumbnail,
+.gallery-icon a.thumbnail img{
+	border: none !important;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
 }
 
 
