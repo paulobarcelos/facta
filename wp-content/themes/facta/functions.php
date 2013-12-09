@@ -731,8 +731,8 @@ if ( function_exists( 'add_image_size' ) ) {
 }
 
 
-remove_shortcode('gallery', 'gallery_shortcode_tbs');
-add_shortcode('gallery', 'gallery_shortcode_carrousel');
+//remove_shortcode('gallery', 'gallery_shortcode_tbs');
+/*add_shortcode('gallery', 'gallery_shortcode_carrousel');
 
 function gallery_shortcode_carrousel($attr) {
 	global $post, $wp_locale;
@@ -775,5 +775,32 @@ function gallery_shortcode_carrousel($attr) {
 	}
 
 	return $output;
+}*/
+
+add_filter( 'plugins_url', 'symlinked_plugins_url', 10, 3 );
+
+function symlinked_plugins_url( $url, $path, $plugin ) {
+
+	if ( !empty( $path ) and is_string( $path ) and strpos( $path, '..' ) === false )
+		$append = '/' . ltrim( $path, '/' );
+	else
+		$append = '';
+
+	switch ( $base = basename( dirname( $plugin ) ) ) {
+
+		case 'responsive-lightbox':
+			$return = WP_PLUGIN_URL . '/' . $base;
+			break;
+
+	}
+
+	if ( isset( $return ) ) {
+		if ( is_ssl() )
+			$return = str_replace( 'http://', 'https://', $return );
+		return $return . $append;
+	} else {
+		return $url;
+	}
+
 }
 ?>
