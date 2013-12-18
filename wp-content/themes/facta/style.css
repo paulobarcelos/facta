@@ -882,3 +882,7 @@ blockquote.pull-left{
 	display: none;
 }
 
+/* Image gallery */
+.pp_pic_holder .ppt{
+	font-size: 13px;
+}
