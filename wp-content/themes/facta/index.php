@@ -48,7 +48,12 @@
 						
 							<a href="<?php echo get_category_link($category->cat_ID) ?>" title="<?php echo $category->name; ?>" rel="bookmark">
 								<h3><?php echo $category->name; ?></h3>
-							
+								<?php 
+									$description = category_description($category->cat_ID);
+									if ( !empty( $description ) ) :?>
+										<div class="description"><?php echo $description; ?></div>
+								<?php endif; ?>
+												
 								<?php echo get_the_post_thumbnail( $first_post->ID , 'big' ); ?> 
 							</a>
 						
