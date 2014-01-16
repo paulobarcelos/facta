@@ -36,7 +36,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/lice
 }
 
 .wp-caption-text{
-	
+	font-size: 80%;
+	font-style: italic;
+	color: #666;
+	padding: 5px;
 }
 
 .sticky{
@@ -176,17 +179,20 @@ div[id*='attachment_']{
 	max-width: 100%;
 }
 
-img.alignleft{
+img.alignleft,
+div.alignleft{
 	margin-right: 10px;
 	float: left;
 }
 
-img.alignright{
+img.alignright,
+div.alignright{
 	margin-left: 10px;
 	float: right;
 }
 
-img.aligncenter{
+img.aligncenter,
+div.aligncenter{
 	display: block;
 	margin: 0 auto;
 }
@@ -650,7 +656,8 @@ blockquote.pull-left{
 .facta .cover h1,
 .facta .cover h2,
 .facta .cover h3,
-.facta .cover h4{
+.facta .cover h4,
+.facta .cover .description{
 	text-align: center;
 }
 
